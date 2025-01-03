@@ -1,0 +1,61 @@
+<div class="globalContainer">
+  <!-- Jumbotron -->
+  <div class="jumbotronContainer">
+    <h1 class="display-4">Bem-vindo Usuário!</h1>
+    <p class="lead">
+      Este é um projeto front-end de estudo usando o Angular. <br />
+      Tem o propósito de ser uma demonstração de telas voltadas a cadastro e
+      login de usuários.
+    </p>
+  </div>
+  <!-- Form Container -->
+  <div class="formContainer">
+    <form>
+      <!-- Email -->
+      <div class="form-row">
+        <div class="form-group">
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Endereço de Email"
+          />
+        </div>
+      </div>
+      <!-- Password -->
+      <div class="form-row">
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Senha" />
+        </div>
+      </div>
+      <!-- loginBtn -->
+      <div class="btnContainer">
+        <button
+          id="loginBtn"
+          class="btn btn-primary btn-lg"
+          routerLink="/login-component"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          role="button"
+        >
+          Entrar
+        </button>
+      </div>
+      <div class="forgotPassword">
+        <a href="http://">Esqueceu sua senha?</a>
+      </div>
+      <hr />
+    </form>
+    <div class="btnContainer">
+      <button
+        id="registerBtn"
+        class="btn btn-success btn-lg"
+        routerLink="/register-component"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        role="button"
+      >
+        Criar Nova Conta
+      </button>
+    </div>
+  </div>
+</div>
