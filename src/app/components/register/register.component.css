@@ -1,42 +1,114 @@
-header {
-  text-align: center;
-  margin-top: 50px;
-  color: rgb(43, 42, 42);
+.globalContainer {
+  width: 100vw;
+  height: 100vh;
+  background: #f2f4f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.form-container {
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 15px;
+  margin-top: 0px;
+  text-align: center;
+}
+
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #606770;
+  text-align: center;
+}
+
+.formContainer {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   background: #fff;
   border-radius: 10px;
   padding: 15px;
   max-width: 950px;
-  height: 700px;
-  margin: auto;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.41);
+  max-height: 950px;
+  min-width: 700px;
+  margin-top: 15px;
+  overflow-y: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .form-row {
   margin: 10px;
 }
 
-.form-row label {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+.form-row label,
+.gender-radio label,
+.gender-label {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: x-large;
+}
+
+.gender-label {
+  margin-left: 10px;
 }
 
 .form-row input,
 select {
-  width: 850px;
-  height: 50px;
+  height: 60px;
+}
+
+.form-row input,
+.form-row input::placeholder,
+select,
+option {
+  font-size: 22px;
+  color: rgb(129, 129, 129);
+}
+
+.EmailPassRow,
+.NameLastNameRow,
+.CityStateRow,
+.GenderRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.email-row,
+.password-row,
+.name-row,
+.lastName-row,
+.city-row,
+.state-row {
+  width: 300px;
+}
+
+.gender-radio {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px;
+  margin: auto;
+  border: 2px solid #dfe1e5;
+  border-radius: 10px;
+}
+
+.gender-radio:hover {
+  background-color: #dfe1e5;
+  color: #fff;
+}
+
+.gender-radio input[type="radio"] {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.alert {
+  font-size: 0.9rem;
+  line-height: 1.2;
 }
 
 .btn-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
+  margin-top: 30px;
 }
 
 .register {
