@@ -18,9 +18,7 @@ import { User } from '../../Models/User';
 })
 export class RegisterComponent {
   // forms Validation
-  formRegister = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.maxLength(50)]),
-    lastName: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+  registerForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(100)]),
     password: new FormControl('', [
       Validators.required,
@@ -31,6 +29,7 @@ export class RegisterComponent {
       Validators.required,
       Validators.maxLength(100),
     ]),
+    complement: new FormControl('', [Validators.maxLength(100)]),
     city: new FormControl('', [Validators.required, Validators.maxLength(100)]),
     state: new FormControl('', [Validators.required])
   });
@@ -40,38 +39,38 @@ export class RegisterComponent {
 
   // Register Function
   register() {
-    this.userVetor.push(this.formRegister.value as User);
-    this.formRegister.reset();
+    this.userVetor.push(this.registerForm.value as User);
+    this.registerForm.reset();
   }
 
-  // State List
-  states = [
-    "Acre",
-    "Alagoas",
-    "Amapá",
-    "Amazonas",
-    "Bahia",
-    "Ceará",
-    "Distrito Federal",
-    "Espírito Santo",
-    "Goiás",
-    "Maranhão",
-    "Mato Grosso",
-    "Mato Grosso do Sul",
-    "Minas Gerais",
-    "Pará",
-    "Paraíba",
-    "Paraná",
-    "Pernambuco",
-    "Piauí",
-    "Rio de Janeiro",
-    "Rio Grande do Norte",
-    "Rio Grande do Sul",
-    "Rondônia",
-    "Roraima",
-    "Santa Catarina",
-    "São Paulo",
-    "Sergipe",
-    "Tocantins",
+  //State List
+  stateList: string[] = [
+    "AC",
+    "AL",
+    "AP",
+    "AM",
+    "BA",
+    "CE",
+    "DF",
+    "ES",
+    "GO",
+    "MA",
+    "MT",
+    "MS",
+    "MG",
+    "PA",
+    "PB",
+    "PR",
+    "PE",
+    "PI",
+    "RJ",
+    "RN",
+    "RS",
+    "RO",
+    "PR",
+    "SC",
+    "SP",
+    "SE",
+    "TO"
   ]
 }

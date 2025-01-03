@@ -1,261 +1,172 @@
-<div class="globalContainer">
-  <!-- Form -->
-  <div class="formContainer">
-    <form [formGroup]="formRegister">
-      <h2 class="display-4">Faça seu cadastro!</h2>
-      <h3>É rápido e fácil</h3>
-      <hr />
-      <!-- Name & LastName-->
-      <div class="NameLastNameRow">
-        <!-- NAME -->
-        <div class="form-row name-row">
-          <div class="form-group">
-            <!-- NAME INPUT -->
-            <label>Nome</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="name"
-              placeholder="Nome"
-              maxlength="50"
-              required
-            />
+<header>
+  <h1>Faça Seu Cadastro!</h1>
+</header>
+<br />
+<div class="form-container">
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <!-- EMAIL -->
+    <div class="form-row">
+      <div class="form-group">
+        <!-- EMAIL INPUT -->
+        <label>Email *</label>
+        <input
+          type="email"
+          class="form-control"
+          formControlName="email"
+          placeholder="Insira Seu Email"
+          minlength="8"
+          required
+        />
 
-            <!-- NAME AWARNING -->
-            @if (formRegister.get('name').hasError('required') &&
-            formRegister.get('name').touched) {
-            <p class="alert alert-warning">O campo email é obrigatório.</p>
-            } @if (formRegister.get('name').hasError('maxlength') &&
-            formRegister.get('name').touched) {
-            <p class="alert alert-warning alert">
-              O campo nome pode conter no máximo 50 caracteres.
-            </p>
-            }
-          </div>
-        </div>
-
-        <!-- LAST NAME -->
-        <div class="form-row lastName-row">
-          <div class="form-group">
-            <!-- LAST NAME INPUT -->
-            <label>Sobrenome</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="lastName"
-              placeholder="Sobrenome"
-              maxlength="50"
-              required
-            />
-
-            <!-- PASSWORD AWARNING -->
-            @if (formRegister.get('lastName').hasError('required') &&
-            formRegister.get('lastName').touched) {
-            <p class="alert alert-warning alert">
-              O campo sobrenome é obrigatório.
-            </p>
-            } @if (formRegister.get('lastName').hasError('maxlength') &&
-            formRegister.get('lastName').touched) {
-            <p class="alert alert-warning alert">
-              O campo sobrenome pode conter no máximo 50 caracteres.
-            </p>
-            }
-          </div>
-        </div>
+        <!-- EMAIL AWARNING -->
+        @if (registerForm.get('email').hasError('required') &&
+        registerForm.get('email').touched) {
+        <p class="alert alert-warning">O campo email é obrigatório.</p>
+        } @if (registerForm.get('email').hasError('minlength') &&
+        registerForm.get('email').touched) {
+        <p class="alert alert-warning">
+          O campo email precisa conter pelo menos 8 caracteres.
+        </p>
+        } @if (registerForm.get('email').hasError('maxlength') &&
+        registerForm.get('email').touched) {
+        <p class="alert alert-warning">
+          O campo email pode conter no máximo 100 caracteres.
+        </p>
+        }
       </div>
-      <!-- Email & Password Row -->
-      <div class="EmailPassRow">
-        <!-- EMAIL -->
-        <div class="form-row email-row">
-          <div class="form-group">
-            <!-- EMAIL INPUT -->
-            <label>Email</label>
-            <input
-              type="email"
-              class="form-control"
-              formControlName="email"
-              placeholder="Email"
-              minlength="8"
-              required
-            />
+    </div>
 
-            <!-- EMAIL AWARNING -->
-            @if (formRegister.get('email').hasError('required') &&
-            formRegister.get('email').touched) {
-            <p class="alert alert-warning">O campo email é obrigatório.</p>
-            } @if (formRegister.get('email').hasError('minlength') &&
-            formRegister.get('email').touched) {
-            <p class="alert alert-warning alert">
-              O campo email precisa conter pelo menos 8 caracteres.
-            </p>
-            } @if (formRegister.get('email').hasError('maxlength') &&
-            formRegister.get('email').touched) {
-            <p class="alert alert-warning alert">
-              O campo email pode conter no máximo 100 caracteres.
-            </p>
-            }
-          </div>
-        </div>
+    <!-- PASSWORD -->
+    <div class="form-row">
+      <div class="form-group">
+        <!-- PASSWORD INPUT -->
+        <label for="inputPassword">Senha *</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+          placeholder="Insira Sua Senha"
+          minlength="8"
+          maxlength="12"
+          required
+        />
 
-        <!-- PASSWORD -->
-        <div class="form-row password-row">
-          <div class="form-group">
-            <!-- PASSWORD INPUT -->
-            <label>Senha</label>
-            <input
-              type="password"
-              class="form-control"
-              formControlName="password"
-              placeholder="Nova Senha"
-              minlength="8"
-              maxlength="12"
-              required
-            />
-
-            <!-- PASSWORD AWARNING -->
-            @if (formRegister.get('password').hasError('required') &&
-            formRegister.get('password').touched) {
-            <p class="alert alert-warning alert">
-              O campo senha é obrigatório.
-            </p>
-            } @if (formRegister.get('password').hasError('minlength') &&
-            formRegister.get('password').touched) {
-            <p class="alert alert-warning alert">
-              O campo senha precisa conter pelo menos 8 caracteres.
-            </p>
-            } @if (formRegister.get('password').hasError('maxlength') &&
-            formRegister.get('password').touched) {
-            <p class="alert alert-warning alert">
-              O campo senha pode conter no máximo 12 caracteres.
-            </p>
-            }
-          </div>
-        </div>
+        <!-- PASSWORD AWARNING -->
+        @if (registerForm.get('password').hasError('required') &&
+        registerForm.get('password').touched) {
+        <p class="alert alert-warning">O campo senha é obrigatório.</p>
+        } @if (registerForm.get('password').hasError('minlength') &&
+        registerForm.get('password').touched) {
+        <p class="alert alert-warning">
+          O campo senha precisa conter pelo menos 8 caracteres.
+        </p>
+        } @if (registerForm.get('password').hasError('maxlength') &&
+        registerForm.get('password').touched) {
+        <p class="alert alert-warning">
+          O campo senha pode conter no máximo 12 caracteres.
+        </p>
+        }
       </div>
-      <!-- ADDRESS -->
-      <div class="form-row">
-        <div class="form-group">
-          <!-- ADDRESS INPUT -->
-          <label>Endereço</label>
-          <input
-            type="text"
-            class="form-control"
-            formControlName="address"
-            placeholder="Endereço"
-            maxlength="100"
-            required
-          />
+    </div>
 
-          <!-- ADDRESS AWARING -->
-          @if (formRegister.get('address').hasError('required') &&
-          formRegister.get('address').touched) {
-          <p class="alert alert-warning alert">
-            O campo endereço é obrigatório.
-          </p>
-          } @if (formRegister.get('address').hasError('maxlength') &&
-          formRegister.get('address').touched) {
-          <p class="alert alert-warning alert">
-            O campo endereço pode conter no máximo 100 caracteres.
-          </p>
-          }
-        </div>
-      </div>
-      <!-- City & State Row -->
-      <div class="CityStateRow">
-        <!-- CITY -->
-        <div class="form-row city-row">
-          <div class="form-group">
-            <!-- CITY INPUT -->
-            <label>Cidade</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="city"
-              placeholder="Cidade"
-              maxlength="100"
-              required
-            />
+    <!-- ADDRESS -->
+    <div class="form-row">
+      <div class="form-group">
+        <!-- ADDRESS INPUT -->
+        <label>Endereço *</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="address"
+          placeholder="Insira Seu Endereço"
+          maxlength="100"
+          required
+        />
 
-            <!-- CITY AWARING -->
-            @if (formRegister.get('city').hasError('required') &&
-            formRegister.get('city').touched) {
-            <p class="alert alert-warning alert">
-              O campo cidade é obrigatório.
-            </p>
-            } @if (formRegister.get('city').hasError('maxlength') &&
-            formRegister.get('city').touched) {
-            <p class="alert alert-warning alert">
-              O campo cidade pode conter no máximo 100 caracteres.
-            </p>
-            }
-          </div>
-        </div>
+        <!-- ADDRESS AWARING -->
+        @if (registerForm.get('address').hasError('required') &&
+        registerForm.get('address').touched) {
+        <p class="alert alert-warning">O campo endereço é obrigatório.</p>
+        } @if (registerForm.get('address').hasError('maxlength') &&
+        registerForm.get('address').touched) {
+        <p class="alert alert-warning">
+          O campo endereço pode conter no máximo 100 caracteres.
+        </p>
+        }
+      </div>
+    </div>
 
-        <!-- STATE -->
-        <div class="form-row state-row">
-          <div class="form-group">
-            <!-- STATE SELECT -->
-            <label>Estado</label>
-            <select class="form-control" formControlName="state" required>
-              <option value="" disabled selected>Escolha o Estado:</option>
-              <option *ngFor="let state of states">{{ state }}</option>
-            </select>
+    <!-- COMPLEMENT -->
+    <div class="form-row">
+      <div class="form-group">
+        <!-- COMPLEMENT INPUT -->
+        <label>Complemento</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="complement"
+          placeholder="Insira o Complemento do Endereço"
+          maxlength="100"
+        />
 
-            <!-- STATE AWARNING -->
-            @if (formRegister.get('state').hasError('required') &&
-            formRegister.get('state').touched) {
-            <p class="alert alert-warning alert">
-              O campo estado é obrigatório.
-            </p>
-            }
-          </div>
-        </div>
+        <!-- COMPLEMENT AWARING -->
+        @if (registerForm.get('complement').hasError('maxlength') &&
+        registerForm.get('complement').touched) {
+        <p class="alert alert-warning">
+          O campo endereço pode conter no máximo 100 caracteres.
+        </p>
+        }
       </div>
-      <!-- Gender Row -->
-      <div class="gender-label">Gênero</div>
-      <div class="GenderRow">
-        <!-- MASC RADIO -->
-        <div class="form-check form-check-inline gender-radio">
-          <label class="form-check-label" for="mascRadio">Masculino</label>
-          <input
-            class="form-check-input"
-            type="radio"
-            id="mascRadio"
-            value="mascOption"
-          />
-        </div>
-        <!-- FEM RADIO -->
-        <div class="form-check form-check-inline gender-radio">
-          <label class="form-check-label" for="femRadio">Feminino</label>
-          <input
-            class="form-check-input"
-            type="radio"
-            id="femRadio"
-            value="femOption"
-          />
-        </div>
-        <!-- OTHER RADIO -->
-        <div class="form-check form-check-inline gender-radio">
-          <label class="form-check-label" for="otherRadio">Não-Binário</label>
-          <input
-            class="form-check-input"
-            type="radio"
-            id="otherRadio"
-            value="otherOption"
-          />
-        </div>
+    </div>
+
+    <!-- CITY -->
+    <div class="form-row">
+      <div class="form-group">
+        <!-- CITY INPUT -->
+        <label>Cidade *</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="city"
+          placeholder="Insira Sua Cidade"
+          maxlength="100"
+          required
+        />
+
+        <!-- CITY AWARING -->
+        @if (registerForm.get('city').hasError('required') &&
+        registerForm.get('city').touched) {
+        <p class="alert alert-warning">O campo cidade é obrigatório.</p>
+        } @if (registerForm.get('city').hasError('maxlength') &&
+        registerForm.get('city').touched) {
+        <p class="alert alert-warning">
+          O campo cidade pode conter no máximo 100 caracteres.
+        </p>
+        }
       </div>
-      <!-- BUTTON -->
-      <div class="btn-container">
-        <button
-          type="submit"
-          class="btn btn-success btn-lg register"
-          role="button"
-          (click)="register()"
-        >
-          Cadastre-se
-        </button>
+    </div>
+
+    <!-- STATE -->
+    <div class="form-row">
+      <div class="form-group">
+        <!-- STATE SELECT -->
+        <label>Estado *</label>
+        <select class="form-control" formControlName="state" required>
+          <option value="" disabled selected>Escolha Seu Estado:</option>
+          <option *ngFor="let state of stateList" [value]="state">
+            {{ state }}
+          </option>
+        </select>
+
+        <!-- STATE AWARNING -->
+        @if (registerForm.get('state').hasError('required') &&
+        registerForm.get('state').touched) {
+        <p class="alert alert-warning">O campo estado é obrigatório.</p>
+        }
       </div>
-    </form>
-  </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg register" role="button">
+      Cadastre-se
+    </button>
+  </form>
 </div>
