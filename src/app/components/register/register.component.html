@@ -132,6 +132,21 @@
           </div>
         </div>
       </div>
+      <!-- Gender Row -->
+      <label class="gender-label">Gênero</label>
+      <div class="radio-row">
+        @for (gender of gendersList; track gender.value){
+        <div class="form-check radio-group">
+          <input
+            type="radio"
+            class="form-check-input gender-radio"
+            [value]="gender.value"
+            formControlName="gender"
+          />
+          <label class="form-check-label">{{ gender.label }}</label>
+        </div>
+        }
+      </div>
       <!-- ADDRESS -->
       <div class="form-row">
         <div class="form-group">
@@ -198,7 +213,9 @@
             <label>Estado</label>
             <select class="form-control" formControlName="state" required>
               <option value="" disabled selected>Escolha o Estado:</option>
-              <option *ngFor="let state of states">{{ state }}</option>
+              @for (state of stateList; track state.value){
+              <option value="{{ state.value }}">{{ state.label }}</option>
+              }
             </select>
 
             <!-- STATE AWARNING -->
@@ -211,47 +228,12 @@
           </div>
         </div>
       </div>
-      <!-- Gender Row -->
-      <div class="gender-label">Gênero</div>
-      <div class="GenderRow">
-        <!-- MASC RADIO -->
-        <div class="form-check form-check-inline gender-radio">
-          <label class="form-check-label" for="mascRadio">Masculino</label>
-          <input
-            class="form-check-input"
-            type="radio"
-            id="mascRadio"
-            value="mascOption"
-          />
-        </div>
-        <!-- FEM RADIO -->
-        <div class="form-check form-check-inline gender-radio">
-          <label class="form-check-label" for="femRadio">Feminino</label>
-          <input
-            class="form-check-input"
-            type="radio"
-            id="femRadio"
-            value="femOption"
-          />
-        </div>
-        <!-- OTHER RADIO -->
-        <div class="form-check form-check-inline gender-radio">
-          <label class="form-check-label" for="otherRadio">Não-Binário</label>
-          <input
-            class="form-check-input"
-            type="radio"
-            id="otherRadio"
-            value="otherOption"
-          />
-        </div>
-      </div>
       <!-- BUTTON -->
       <div class="btn-container">
         <button
           type="submit"
           class="btn btn-success btn-lg register"
           role="button"
-          (click)="register()"
         >
           Cadastre-se
         </button>

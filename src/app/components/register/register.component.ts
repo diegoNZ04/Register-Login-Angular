@@ -7,7 +7,6 @@ import {
   ReactiveFormsModule,
   FormsModule,
 } from '@angular/forms';
-import { User } from '../../Models/User';
 
 @Component({
   selector: 'app-register',
@@ -32,46 +31,45 @@ export class RegisterComponent {
       Validators.maxLength(100),
     ]),
     city: new FormControl('', [Validators.required, Validators.maxLength(100)]),
-    state: new FormControl('', [Validators.required])
+    state: new FormControl('', [Validators.required]),
+    gender: new FormControl('', [Validators.required])
   });
 
-  // User Vetor
-  userVetor: User[] = [];
-
-  // Register Function
-  register() {
-    this.userVetor.push(this.formRegister.value as User);
-    this.formRegister.reset();
-  }
-
   // State List
-  states = [
-    "Acre",
-    "Alagoas",
-    "Amapá",
-    "Amazonas",
-    "Bahia",
-    "Ceará",
-    "Distrito Federal",
-    "Espírito Santo",
-    "Goiás",
-    "Maranhão",
-    "Mato Grosso",
-    "Mato Grosso do Sul",
-    "Minas Gerais",
-    "Pará",
-    "Paraíba",
-    "Paraná",
-    "Pernambuco",
-    "Piauí",
-    "Rio de Janeiro",
-    "Rio Grande do Norte",
-    "Rio Grande do Sul",
-    "Rondônia",
-    "Roraima",
-    "Santa Catarina",
-    "São Paulo",
-    "Sergipe",
-    "Tocantins",
+  stateList = [
+    { label: 'Acre', value: 'ac' },
+    { label: 'Alagoas', value: 'al' },
+    { label: 'Amapá', value: 'ap' },
+    { label: 'Amazonas', value: 'am' },
+    { label: 'Bahia', value: 'ba' },
+    { label: 'Ceará', value: 'ce' },
+    { label: 'Distrito Federal', value: 'df' },
+    { label: 'Espírito Santo', value: 'es' },
+    { label: 'Goiás', value: 'go' },
+    { label: 'Maranhão', value: 'ma' },
+    { label: 'Mato Grosso', value: 'mt' },
+    { label: 'Mato Grosso do Sul', value: 'ms' },
+    { label: 'Minas Gerais', value: 'mg' },
+    { label: 'Pará', value: 'pa' },
+    { label: 'Paraíba', value: 'pb' },
+    { label: 'Paraná', value: 'pr' },
+    { label: 'Pernambuco', value: 'pe' },
+    { label: 'Piauí', value: 'pi' },
+    { label: 'Rio de Janeiro', value: 'rj' },
+    { label: 'Rio Grande do Norte', value: 'rn' },
+    { label: 'Rio Grande do Sul', value: 'rs' },
+    { label: 'Rondônia', value: 'ro' },
+    { label: 'Roraima', value: 'rr' },
+    { label: 'Santa Catarina', value: 'sc' },
+    { label: 'São Paulo', value: 'sp' },
+    { label: 'Sergipe', value: 'se' },
+    { label: 'Tocantins', value: 'to' }
+  ];
+
+  // Gender List
+  gendersList = [
+    { label: 'Masculino', value: 'masc' },
+    { label: 'Feminino', value: 'fem' },
+    { label: 'Não-Binário', value: 'other' },
   ]
 }

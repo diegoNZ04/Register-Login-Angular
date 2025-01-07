@@ -40,7 +40,6 @@ h3 {
 }
 
 .form-row label,
-.gender-radio label,
 .gender-label {
   font-family: Arial, Helvetica, sans-serif;
   font-size: x-large;
@@ -51,7 +50,8 @@ h3 {
 }
 
 .form-row input,
-select {
+select,
+.radio-group {
   height: 60px;
 }
 
@@ -61,12 +61,14 @@ select,
 option {
   font-size: 22px;
   color: rgb(129, 129, 129);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .EmailPassRow,
 .NameLastNameRow,
 .CityStateRow,
-.GenderRow {
+.radio-row,
+.radio-group {
   display: flex;
   flex-direction: row;
 }
@@ -80,23 +82,24 @@ option {
   width: 300px;
 }
 
-.gender-radio {
-  display: flex;
+.radio-group {
+  align-items: center;
   justify-content: space-evenly;
   padding: 15px;
   margin: auto;
   border: 2px solid #dfe1e5;
   border-radius: 10px;
+  width: 200px;
 }
 
-.gender-radio:hover {
+.form-check-label {
+  font-size: large;
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.radio-group:hover {
   background-color: #dfe1e5;
-  color: #fff;
-}
-
-.gender-radio input[type="radio"] {
-  margin-left: 5px;
-  margin-top: 10px;
 }
 
 .alert {
