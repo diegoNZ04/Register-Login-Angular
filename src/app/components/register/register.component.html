@@ -147,6 +147,11 @@
         </div>
         }
       </div>
+      <!-- GENDER AWARNING -->
+      @if (formRegister.get('gender').hasError('required') &&
+      formRegister.get('gender').touched) {
+      <p class="alert alert-warning alert">Selecione seu gênero.</p>
+      }
       <!-- ADDRESS -->
       <div class="form-row">
         <div class="form-group">
