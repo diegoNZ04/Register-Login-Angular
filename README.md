@@ -1,27 +1,63 @@
-# ClientApp
+# Register-Login-Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.9.
+Este é um projeto frontend criado com Angular, que apresenta uma tela de login e uma de cadastro de usuários. O objetivo principal foi aprimorar habilidades em desenvolvimento web, com foco em responsividade e boas práticas.
 
-## Development server
+## 🚀 Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Tela inicial de login.
+- Tela de cadastro de novos usuários.
+- Design responsivo, adaptado para dispositivos móveis e tablets.
 
-## Code scaffolding
+- Deploy realizado na Vercel para acesso fácil e rápido.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🛠️ Tecnologias Utilizadas
 
-## Build
+Angular 17
+TypeScript
+HTML5
+CSS3
+Bootstrap
+Vercel (Deploy)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 📱 Responsividade
 
-## Running unit tests
+O projeto foi desenvolvido com foco em design responsivo, garantindo que as telas sejam exibidas corretamente em diferentes dispositivos, incluindo smartphones e tablets.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+🌐 Como acessar o projeto?
+O projeto está disponível online! Acesse pelo link: https://register-login-angular.vercel.app/
 
-## Running end-to-end tests
+## 📦 Como rodar o projeto localmente
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Clone o repositório:
 
-## Further help
+```
+git clone https://github.com/diegoNZ04/register-login-angular.git
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Navegue até o diretório do projeto:
+
+```
+cd register-login-angular
+```
+
+Instale as dependências:
+
+```
+npm install
+```
+
+Inicie o servidor de desenvolvimento:
+
+```
+ng serve
+```
+
+Acesse no navegador:
+
+```
+http://localhost:4200
+```
+
+## 🙌 Agradecimentos
+
+Este projeto foi uma ótima oportunidade para consolidar conceitos aprendidos e me desafiar no início do ano. Feedbacks e sugestões são sempre bem-vindos! 😊
